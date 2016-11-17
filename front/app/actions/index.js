@@ -1,12 +1,13 @@
-import {OLOLO_TYPE} from '_app/actions/_types';
+import {LIST_RECORDS} from '_app/actions/_types';
+import {API_URL} from '_app/config';
 
-const fetchPosts = () => {
+const fetchRecords = () => {
   return {
-    type: OLOLO_TYPE,
-    payload: fetch('http://localhost:3000/v1/records')
+    type: LIST_RECORDS,
+    payload: fetch(`${API_URL}/v1/records`)
       .then(response => response.json())
       .then(data => { return data; })
   };
 };
 
-export {fetchPosts};
+export default fetchRecords;

@@ -13,12 +13,13 @@ const RecordComponent = class RecordComponent extends Component {
   state = {
     inputMode: false
   }
-  handleClick() {
-    !this.state.inputMode
-      ? this.setState({inputMode: true})
-      : null;
+  showInput = () => {
+    this.setState({inputMode: true});
   }
-  handleInput(e) {
+  hideInput = () =>  {
+    this.setState({inputMode: false});
+  }
+  handleInput = (e) => {
     switch (e.charCode) {
       case 13:
         this.submit(e);
@@ -29,21 +30,26 @@ const RecordComponent = class RecordComponent extends Component {
   renderInput(value) {
     return (
       <input
-        onKeyPress  = {this.handleInput.bind(this)}
-        placeholder = {value}
+        autoFocus
+        defaultValue = {value}
+        onBlur = {this.hideInput}
+        onKeyPress  = {this.handleInput}
         type        = 'text'/>
     );
   }
-  submit(e) {
+  submit = (e) => {
     const {id, dispatch} = this.props;
-    dispatch(updatePost(id, e.target.value));
+    dispatch(
+      updatePost(id, e.target.value)
+    ).then(
+      this.hideInput()
+    );
   }
   render() {
     const {inputMode} = this.state;
     const {id, title} = this.props;
-    console.log(id);
     return (
-        <li key={id} onClick={this.handleClick.bind(this)}>
+        <li key={id} onClick={this.showInput}>
           {
             inputMode ? this.renderInput(title) : title
           }

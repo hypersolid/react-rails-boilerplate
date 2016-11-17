@@ -6,7 +6,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import App from '_app/containers';
 import store from '_app/store';
 
 import MainLayoutComponent from '_app/components/layouts/main';
@@ -19,11 +18,9 @@ export default (render((
   <Provider store={store}>
   <Router history={hashHistory}>
     <Route component={MainLayoutComponent}>
-      <Route component={App}>
-        <Route component={IndexPageComponent} path='/'/>
-        <Route component={AboutPageComponent} path='/about'/>
-        <Route component={FaqPageComponent} path='/faq'/>
-      </Route>
+      <Route component={IndexPageComponent} path='/'/>
+      <Route component={AboutPageComponent} path='/about'/>
+      <Route component={FaqPageComponent} path='/faq'/>
     </Route>
   </Router>
   </Provider>

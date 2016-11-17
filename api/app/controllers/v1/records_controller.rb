@@ -64,7 +64,7 @@ class V1::RecordsController < V1::ApplicationController
   # PATCH/PUT /records/1.json
   def update
     if @record.update(record_params)
-      render :show, status: :ok, location: @record
+      render :show, status: :ok, location: v1_record_url(@record)
     else
       render json: @record.errors, status: :unprocessable_entity
     end
@@ -85,6 +85,7 @@ class V1::RecordsController < V1::ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def record_params
+    p params
     params.require(:record).permit(:title)
   end
 end

@@ -2,12 +2,20 @@
 
 import React, { Component } from 'react';
 import RecordComponent from '_app/components/items/record';
+import fetchRecords from '_app/actions/index';
 import { connect } from 'react-redux';
 
 const IndexPageComponent = class IndexPageComponent extends Component {
   static propTypes = {
-    records: React.PropTypes.array,
-    dispatch: React.PropTypes.func
+    dispatch: React.PropTypes.func,
+    records: React.PropTypes.array
+  }
+  static defaultProps: {
+    records: []
+  };
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchRecords());
   }
   render() {
     const { records, dispatch } = this.props;
@@ -17,11 +25,23 @@ const IndexPageComponent = class IndexPageComponent extends Component {
 
         <h2>Records:</h2>
         <ul>
-        {records.map((record) => <RecordComponent key={record.id} id={record.id} title={record.title} dispatch={dispatch}/>)}
+        {
+          records.map(
+            (record) => <RecordComponent
+                          dispatch={dispatch}
+                          id={record.id}
+                          key={record.id}
+                          title={record.title}/>
+          )
+        }
         </ul>
       </div>
     );
   }
 };
 
-export default connect(state => ({ records: state.records }))(IndexPageComponent);
+const mapStoreToProps = store => {
+  return store;
+};
+
+export default connect(mapStoreToProps)(IndexPageComponent);
