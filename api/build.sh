@@ -1,2 +1,2 @@
 rubocop -a
-rake swagger:docs
+curl -H "Accept:application/json" localhost:3000/apidocs > swagger.json
