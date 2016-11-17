@@ -1,8 +1,10 @@
 'use strict';
 
+import styles from '_app/components/items/record/styles';
+
 import React, { Component } from 'react';
 import updateRecord from '_app/actions/update';
-
+import deleteRecord from '_app/actions/delete';
 
 const RecordComponent = class RecordComponent extends Component {
   static propTypes = {
@@ -39,20 +41,27 @@ const RecordComponent = class RecordComponent extends Component {
   }
   submit = (e) => {
     const {id, dispatch} = this.props;
-    dispatch(
-      updateRecord(id, e.target.value)
-    ).then(
-      this.hideInput()
-    );
+    dispatch(updateRecord(id, e.target.value))
+      .then(this.hideInput());
+  }
+  delete = () => {
+    const {id, dispatch} = this.props;
+    dispatch(deleteRecord(id));
   }
   render() {
     const {inputMode} = this.state;
     const {id, title} = this.props;
     return (
-        <li key={id} onClick={this.showInput}>
-          {
-            inputMode ? this.renderInput(title) : title
-          }
+        <li key={id}>
+          <span onClick={this.showInput}>
+            {inputMode ? this.renderInput(title) : title}
+          </span>
+          &nbsp;
+          <span
+            className={styles.deleteButton}
+            onClick={this.delete}>
+            x
+          </span>
         </li>
     );
   }

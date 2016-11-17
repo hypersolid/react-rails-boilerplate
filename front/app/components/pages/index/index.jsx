@@ -1,5 +1,7 @@
 'use strict';
 
+import styles from '_app/components/pages/index/styles';
+
 import React, { Component } from 'react';
 import RecordComponent from '_app/components/items/record';
 import NewRecordComponent from '_app/components/items/record/new';
@@ -21,7 +23,7 @@ const IndexPageComponent = class IndexPageComponent extends Component {
   render() {
     const { records, dispatch } = this.props;
     return (
-      <div>
+      <div className={styles.page}>
         <h2>Index page</h2>
 
         <h2>Records:</h2>

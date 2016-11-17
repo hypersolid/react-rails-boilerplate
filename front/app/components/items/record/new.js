@@ -8,7 +8,7 @@ const NewRecordComponent = class RecordComponent extends Component {
     dispatch: React.PropTypes.func,
   }
   state = {
-    text: ''
+    value: ''
   }
   handleInput = (e) => {
     switch (e.charCode) {
@@ -22,16 +22,22 @@ const NewRecordComponent = class RecordComponent extends Component {
     const {dispatch} = this.props;
     dispatch(
       createRecord(e.target.value)
+    ).then(
+      this.setState({value: ''})
     );
+  }
+  handleChange = (event) => {
+    this.setState({value: event.target.value});
   }
   render() {
     const {value} = this.state;
     return (
       <input
-        defaultValue = {value}
+        onChange    = {this.handleChange}
         onKeyPress  = {this.handleInput}
         placeholder = 'add new record'
-        type        = 'text'/>
+        type        = 'text'
+        value       = {value}/>
     );
   }
 };

@@ -13,6 +13,10 @@ function recordsReducer(store = initialRecordsStore, action) {
       let result = store.slice();
       result.push(action.payload);
       return result;
+    case 'DELETE_RECORD_FULFILLED':
+      return store.filter((record) => {
+        return record.id !== action.payload;
+      });
     default:
   }
   return store;

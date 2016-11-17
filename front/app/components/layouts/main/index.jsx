@@ -8,11 +8,11 @@ const MainLayoutComponent = class MainLayoutComponent extends Component {
     return (
       <div>
       <div>
-        <Link to='/'>Главная</Link>
+        <Link to='/'>Index</Link>
         &nbsp;
-        <Link to='/about'>О нас</Link>
+        <Link to='/about'>About</Link>
         &nbsp;
-        <Link to='/faq'>О вас</Link>
+        <Link to='/faq'>FAQ</Link>
       </div>
       <div>
         {this.props.children}
