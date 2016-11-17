@@ -22,7 +22,7 @@ group :test do
   gem 'rspec-expectations'
   gem 'rspec-mocks'
   gem 'rspec-support'
-  gem 'rspec-rails'
+  gem 'rspec-rails' 
   gem 'airborne'
 end
 
