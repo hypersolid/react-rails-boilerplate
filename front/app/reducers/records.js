@@ -4,7 +4,7 @@ const initialState = [
 function recordsReducer(state = initialState, action) {
   switch (action.type) {
     case 'OLOLO_FULFILLED':
-      return [{id: 1, message: action.payload}];
+      return action.payload.records;
     default:
       return state;
   }

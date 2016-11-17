@@ -16,7 +16,7 @@ const IndexPageComponent = class IndexPageComponent extends Component {
 
         <h2>Records:</h2>
         <ul>
-        {records.map((record) => <RecordComponent key={record.id} message={record.message} />)}
+        {records.map((record) => <RecordComponent key={record.id} title={record.title} />)}
         </ul>
       </div>
     );
