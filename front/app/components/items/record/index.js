@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import updatePost from '_app/actions/update';
+import updateRecord from '_app/actions/update';
 
 
 const RecordComponent = class RecordComponent extends Component {
@@ -40,7 +40,7 @@ const RecordComponent = class RecordComponent extends Component {
   submit = (e) => {
     const {id, dispatch} = this.props;
     dispatch(
-      updatePost(id, e.target.value)
+      updateRecord(id, e.target.value)
     ).then(
       this.hideInput()
     );

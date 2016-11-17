@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import RecordComponent from '_app/components/items/record';
+import NewRecordComponent from '_app/components/items/record/new';
 import fetchRecords from '_app/actions/index';
 import { connect } from 'react-redux';
 
@@ -35,6 +36,8 @@ const IndexPageComponent = class IndexPageComponent extends Component {
           )
         }
         </ul>
+        <NewRecordComponent
+          dispatch={dispatch}/>
       </div>
     );
   }

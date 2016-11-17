@@ -9,6 +9,10 @@ function recordsReducer(store = initialRecordsStore, action) {
       return store.map((record) => {
         return record.id === newRecord.id ? newRecord : record;
       });
+    case 'CREATE_RECORD_FULFILLED':
+      let result = store.slice();
+      result.push(action.payload);
+      return result;
     default:
   }
   return store;
