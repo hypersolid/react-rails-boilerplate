@@ -1,5 +1,15 @@
-class RecordsController < ApplicationController
-  format "json"
+class V1::RecordsController < V1::ApplicationController
+  swagger_controller :records, 'User Management'
+
+  swagger_api :index do
+    summary 'Fetches all User items'
+    notes 'This lists all the active users'
+    param :query, :page, :integer, :optional, 'Page number'
+    response :ok
+    response :no_content
+  end
+
+  format 'json'
   before_action :set_record, only: [:show, :update, :destroy]
 
   # GET /records
@@ -42,13 +52,14 @@ class RecordsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_record
-      @record = Record.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def record_params
-      params.require(:record).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_record
+    @record = Record.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def record_params
+    params.require(:record).permit(:title)
+  end
 end
