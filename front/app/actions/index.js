@@ -1,7 +1,4 @@
-const OLOLO_TYPE = 'OLOLO';
-
-const addRecord = text => ({ type: 'ADD_RECORD', text });
-const deleteRecord = id => ({ type: 'DELETE_RECORD', id });
+import {OLOLO_TYPE} from '_app/actions/_types';
 
 const fetchPosts = () => {
   return {
@@ -12,4 +9,4 @@ const fetchPosts = () => {
   };
 };
 
-export {addRecord, deleteRecord, fetchPosts, OLOLO_TYPE};
+export {fetchPosts};
