@@ -1,0 +1,11 @@
+front/node_modules
+front/build
+npm-debug.log*
+.DS_Store
+node_modules/
+tmp/
+manifest.json
+*.log
+dist/
+testing/
+rds-components/
