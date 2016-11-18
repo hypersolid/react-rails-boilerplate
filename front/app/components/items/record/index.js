@@ -33,10 +33,10 @@ const RecordComponent = class RecordComponent extends Component {
     return (
       <input
         autoFocus
-        defaultValue = {value}
-        onBlur = {this.hideInput}
-        onKeyPress  = {this.handleInput}
-        type        = 'text'/>
+        defaultValue  = {value}
+        onBlur        = {this.hideInput}
+        onKeyPress    = {this.handleInput}
+        type          = 'text'/>
     );
   }
   submit = (e) => {

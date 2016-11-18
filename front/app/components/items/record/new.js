@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import createRecord from '_app/actions/create';
 
-const NewRecordComponent = class RecordComponent extends Component {
+const NewRecordComponent = class NewRecordComponent extends Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
   }
