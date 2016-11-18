@@ -1,39 +1,18 @@
 class V1::RecordsController < V1::ApplicationController
   before_action :set_record, only: [:show, :update, :destroy]
 
-  swagger_path '/pets' do
+  swagger_path '/records' do
     operation :get do
-      key :description, 'Returns all pets from the system that the user has access to'
+      key :description, 'Returns all records'
       key :operationId, 'findPets'
-      key :produces, [
-        'application/json',
-        'text/html'
-      ]
-      key :tags, [
-        'pet'
-      ]
-      parameter do
-        key :name, :tags
-        key :in, :query
-        key :description, 'tags to filter by'
-        key :required, false
-        key :type, :array
-        items do
-          key :type, :string
-        end
-        key :collectionFormat, :csv
-      end
-      parameter do
-        key :name, :limit
-        key :in, :query
-        key :description, 'maximum number of results to return'
-        key :required, false
-        key :type, :integer
-        key :format, :int32
-      end
-      response :default do
-        key :description, 'unexpected error'
+      key :produces, ['application/json']
+      response 200 do
+        key :description, 'usual response'
         schema do
+          key :type, :array
+          items do
+            key :'$ref', :Record
+          end
         end
       end
     end
