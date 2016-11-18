@@ -1,22 +1,15 @@
 'use strict';
-
-import {Link} from 'react-router';
 import React, { Component } from 'react';
+import NavbarComponent from '_app/components/layouts/navbar';
 
 const MainLayoutComponent = class MainLayoutComponent extends Component {
   render() {
     return (
       <div>
-      <div>
-        <Link to='/'>Index</Link>
-        &nbsp;
-        <Link to='/about'>About</Link>
-        &nbsp;
-        <Link to='/logout'>Logout</Link>
-      </div>
-      <div>
-        {this.props.children}
-      </div>
+        <NavbarComponent/>
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }

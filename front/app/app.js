@@ -19,11 +19,12 @@ export default (render((
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route component={MainLayoutComponent}>
+        <Route component={LoginComponent} path='/'/>
         <Route component={LoginComponent} path='/login'/>
         <Route component={LogoutComponent} path='/logout'/>
         <Route
           component={IndexPageComponent}
-          path='/'
+          path='/records'
         />
         <Route
           component={AboutPageComponent}
