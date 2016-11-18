@@ -12,7 +12,7 @@ const MainLayoutComponent = class MainLayoutComponent extends Component {
         &nbsp;
         <Link to='/about'>About</Link>
         &nbsp;
-        <Link to='/faq'>FAQ</Link>
+        <Link to='/logout'>Logout</Link>
       </div>
       <div>
         {this.props.children}
