@@ -26,6 +26,7 @@
     "html-webpack-plugin": "1.3.0",
     "jest": "^17.0.3",
     "json-loader": "0.5.1",
+    "jest-css-modules": "^1.1.0",
     "postcss-loader": "0.6.0",
     "raw-loader": "0.5.1",
     "redux-devtools": "^3.3.1",
@@ -45,6 +46,10 @@
     "presets": [
       "es2015"
     ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "transform": {".*": "node_modules/jest-css-modules"}
   },
   "author": "s74",
   "license": "MIT",

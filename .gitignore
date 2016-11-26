@@ -10,3 +10,4 @@ dist/
 testing/
 rds-components/
 swagger-ui
+coverage
