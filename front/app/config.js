@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/customers/v1';
+const API_URL = 'http://localhost:3000/v1';
+const ENTRY_PAGE = '/records';
 const forgeHeaders = () => {
   return {
     'Content-Type': 'application/json',
@@ -6,4 +7,4 @@ const forgeHeaders = () => {
   };
 };
 
-export {API_URL, forgeHeaders};
+export {API_URL, ENTRY_PAGE, forgeHeaders};
