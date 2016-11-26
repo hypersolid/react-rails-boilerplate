@@ -1,9 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
+import {Nav, Navbar, NavItem} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import auth from '_app/libs/auth';
 
