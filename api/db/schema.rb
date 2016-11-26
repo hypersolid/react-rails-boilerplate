@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117073757) do
+ActiveRecord::Schema.define(version: 20161126185547) do
 
   create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "login"
+    t.string "token"
+    t.index ["login"], name: "index_users_on_login", using: :btree
+    t.index ["token"], name: "index_users_on_token", using: :btree
   end
 
 end

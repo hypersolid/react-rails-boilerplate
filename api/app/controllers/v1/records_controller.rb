@@ -1,4 +1,5 @@
 class V1::RecordsController < V1::ApplicationController
+  before_action :authenticate
   before_action :set_record, only: [:show, :update, :destroy]
 
   swagger_path '/records' do

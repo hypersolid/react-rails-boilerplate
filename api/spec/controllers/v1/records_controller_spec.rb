@@ -3,8 +3,11 @@ require 'rails_helper'
 RSpec.describe V1::RecordsController, type: :controller do
   render_views
 
+  let(:user) { create(:user) }
+
   before :each do
     request.headers['accept'] = 'application/json'
+    request.headers['Authorization'] = user.token
   end
 
   describe 'GET index' do
