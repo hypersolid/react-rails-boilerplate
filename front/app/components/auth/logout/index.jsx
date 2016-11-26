@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import auth from '_app/libs/auth';
+import auth from '_app/lib/auth';
 
 const LogoutComponent = class LogoutComponent extends Component {
   static propTypes = {

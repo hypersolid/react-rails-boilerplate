@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import {Nav, Navbar, NavItem} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import auth from '_app/libs/auth';
+import auth from '_app/lib/auth';
 
 const NavbarComponent = class NavbarComponent extends Component {
   render() {

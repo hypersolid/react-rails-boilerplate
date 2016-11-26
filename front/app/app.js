@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store from '_app/store';
-import auth from '_app/libs/auth';
+import auth from '_app/lib/auth';
 
 import AboutPageComponent from '_app/components/pages/about';
 import LoginComponent from '_app/components/pages/auth';

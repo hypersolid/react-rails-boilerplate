@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import auth from '_app/libs/auth';
+import auth from '_app/lib/auth';
 
 const AuthForm = class AuthForm extends Component {
   constructor(props) {
